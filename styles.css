@@ -4,6 +4,7 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -147,13 +148,42 @@ header {
 }
 
 #projects {
-    height: 1200px;
+    /* height: 1200px; */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 50px;
     background: linear-gradient(135deg, rgb(69, 69, 74) 10%, lightgrey);
     background-size: 100%;
+    padding: 100px 10px;
+}
+
+#projects h2 {
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    color: black;
+    font-weight: bolder;
+
+}
+
+#projects h3 {
+    font-size: clamp(1rem, 3.5vw, 1.3rem);
+}
+
+#projects p {
+    font-size: clamp(1rem, 2vw, 1rem);
+}
+
+.projects-heading {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    padding: 0 2%;
+}
+
+.projects-heading h3 {
+    font-size: clamp(.5rem, 2vw, 1.3rem); 
 }
 
 .project-container {
@@ -163,41 +193,66 @@ header {
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    height: 900px;
+    max-height: 30%;
     max-width: 1400px;
     
     margin: 0 auto;
 }
 
 .project-tile {
-    width: calc(100%/3 - 20px);    
-    /* height:  33%; */
-    /* border: 2px solid black; */
+    width: calc(100%/3 - 20px); 
+    height: calc(100%/2-20px);
     transition: 0.3s;
     border-radius: 5px;
     background-color:rgb(26, 26, 29);
 }
 
-  /* On mouse-over, add a deeper shadow */
   .project-tile:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    opacity: .7;
+    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    opacity: .7; */
   }
 
   .project-tile img {
-    height: 70%;
+    height: 60%;
     border-radius: 5px;
-
   }
   
-  /* Add some padding inside the card container */
   .card-container {
-    padding: 2px 16px;
+    /* padding: 2px 16px; */
+    height: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 10px;
     color: lightgrey;
+    text-align: center;
+    padding: 2% 3%;
+    /* padding-bottom: 10%; */
   }
+
+  .card-container a {
+    display: flex;
+    justify-content: center;
+  }
+
+  .src-code {
+    padding: 15% 50%;
+    text-align: center;
+    vertical-align: center;
+    background-color: #DBCCA1;
+    border-radius: 5px;
+    font-size: clamp(1rem, 3.5vw, 1.3rem);
+    cursor: pointer;
+  }
+
+
+@media(max-width: 1000px) {
+    .project-tile {
+        width: calc(100%/2 - 20px);
+    }
+}
+
 
 @media(max-width: 768px) {
     .hamburger {
@@ -253,4 +308,9 @@ header {
     .nav-list.active {
         left: 0;
     }
+
+    .project-tile {
+        width: calc(100% - 20px);
+    }
+
 }
