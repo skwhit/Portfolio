@@ -18,7 +18,7 @@ header {
     position: fixed;
     width: 100%;
     background-color: #DBCCA1;
-
+    z-index: 1;
 }
 
 #navbar {
@@ -206,22 +206,39 @@ header {
 
 .project-tile {
     width: calc(100%/3 - 20px); 
-    height: calc(100%/2-20px);
     transition: 0.3s;
     border-radius: 5px;
     background-color:rgb(26, 26, 29);
+    /* overflow: hidden; */
 }
 
-  .project-tile:hover {
-    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    opacity: .7; */
-  }
+.coming-soon img {
+    opacity: .5;
+    
+}
+
+.overlay {
+    position: absolute;
+    color: white;
+    
+    z-index: 1;
+}
 
   .project-tile img {
     height: 60%;
     border-radius: 5px 5px 0 0;
+    /* opacity: .9; */
+    transition: .5s ease-in-out;
   }
-  
+
+  .project-tile img:hover {
+    /* transition: .3s ease-in-out;
+    opacity: 1; */
+    box-shadow: 0 0 10px 10px  #DBCCA1;
+    transition: .5s ease-in-out;
+  }
+
+ 
   .card-container {
     /* padding: 2px 16px; */
     height: 40%;
@@ -232,7 +249,7 @@ header {
     gap: 10px;
     color: lightgrey;
     text-align: center;
-    padding: 2% 3%;
+    padding: 5% 3%;
     /* padding-bottom: 10%; */
   }
 
@@ -241,14 +258,40 @@ header {
     justify-content: center;
   }
 
-  .src-code {
-    padding: 15% 50%;
-    text-align: center;
-    vertical-align: center;
+  button {
+    border-radius: 4px;
     background-color: #DBCCA1;
-    border-radius: 5px;
+    border: none;
+    color: black;
+    text-align: center;
     font-size: clamp(1rem, 3.5vw, 1.3rem);
+    padding: 4px 8px;
+    transition: all 0.5s;
     cursor: pointer;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  button:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;  
+    top: 4px;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  button:hover{
+    padding-right: 30px;
+    padding-left: 8px;
+  }
+  
+  button:hover:after {
+    opacity: 1;
+    right: 10px;
   }
 
   .contact {
@@ -307,11 +350,6 @@ header {
     justify-content: flex-end;
     align-items: center;
     color: lightgrey;
-  }
-
-  footer h2 {
-    font-size: 
-    padding-right: 15vw;
   }
 
   .blue-gradient {
