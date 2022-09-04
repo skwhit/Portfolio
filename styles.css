@@ -212,16 +212,20 @@ header {
     /* overflow: hidden; */
 }
 
-.coming-soon img {
-    opacity: .5;
-    
+
+
+.img-container {
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 60%;
 }
 
 .overlay {
     position: absolute;
-    color: white;
-    
-    z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
   .project-tile img {
@@ -230,6 +234,11 @@ header {
     /* opacity: .9; */
     transition: .5s ease-in-out;
   }
+
+  .coming-soon img {
+    opacity: .2;
+    height: 100%;
+}
 
   .project-tile img:hover {
     /* transition: .3s ease-in-out;
@@ -447,4 +456,6 @@ header {
     .contact-links a {
         width: calc(50% - 2vw);
     }
+
+   
 }
